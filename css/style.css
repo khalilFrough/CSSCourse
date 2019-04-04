@@ -51,7 +51,7 @@ body{
 }
 /* styling the logo and the logo box inside the head */
 
-.logo-box{
+.header__logo-box{
   /* where we want to put our logo, we us absolute positioning
   how the 40px counted, it is counted from parent element which is header
   we also need to change the position of the header to relative. */
@@ -60,13 +60,13 @@ body{
   left:40px;
 
 }
-.logo{
+.header__logo{
 height:80px;
 }
 
 /* formating the text and the sologon  in the header 
 and also we want to put it in the center.  */
-.text-box{
+.header__text-box{
   /* centering the texts and button in the middle */
   position: absolute;
   top:50%;
@@ -85,7 +85,7 @@ and also we want to put it in the center.  */
   backface-visibility: hidden;
   margin-bottom: 60px;
 }
-.heading-primary-main{
+.heading-primary--main{
   display: block;
   font-size: 60px;
   font-weight: 400;
@@ -98,7 +98,7 @@ and also we want to put it in the center.  */
   /* animation-timing-function: ease-out; */
   text-align: center;
 }
-.heading-primary-sub{
+.heading-primary--sub{
   display: block;
   font-size: 20px;
   font-weight: 400;
@@ -165,7 +165,7 @@ the same  */
   transform:translateY(-1px);
   box-shadow: 0 5px 10px  rgba(0,0,0,.2);
 }
-.btn-white{
+.btn--white{
   background-color: #fff;
   color:#777;
 }
@@ -186,7 +186,7 @@ the same  */
   transition: all .4s;
 }
 
-.btn-white::after{
+.btn--white::after{
   background-color:#fff;
 }
 .btn:hover::after{
@@ -195,7 +195,7 @@ the same  */
   /* to fade out */
   opacity: 0;
 }
-.btn-animated{
+.btn--animated{
   animation: moveInButton .3s ease-out .75s;
   /* animation fill mode function will everying to the button after the animation starts */
   animation-fill-mode: backwards;
