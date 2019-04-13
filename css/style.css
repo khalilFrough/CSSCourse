@@ -4,40 +4,48 @@ its advanced featureas
 
 
 /* universial selector to defult the margin and padding  */
-*{
-  margin:0px;
-  padding:0px;  
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
   /* changes the box modle so that the borders and the paddings 
   are no longer adding to total width and total height of
   the box which is specified without box-sizing any padding and border
   will be added to the height and width of the box  */
 }
+html {
+  /* making the root size for the whole webpage, we are making the font size of the document to 
+  100% =16 px and then we divide the 10/16=.625% */
+  font-size: 62.5%;
+}
 
 /* by putting the font-family in the boday element the child
  of the body will inheart the font automatically */
-body{
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
-  color:#777;
-  padding:30px;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
   /* 30px padding give 30px frame around the webpage */
 }
 
 /* formating the header element */
 
-.header{
-  height: 95vh; 
+.header {
+  height: 95vh;
   /* this means that in each browser it will be dispalied 95% of the view port 
   it also has a liner-gradient property which puts to colors on top*/
-  background-image: 
-  linear-gradient(
-    to right bottom,
-   rgba(173, 255, 159, 0.8),
-   rgba(40,180,131,0.8)),
-   url(/media/nature.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(49, 76, 230, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url(/media/nature.jpg);
 
   background-size: cover;
   background-position: top;
@@ -46,50 +54,48 @@ body{
   /* using clip-path to cut the bottom of the image 
   this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
   where to start and where to finish start from the top left and goes to right*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
-
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 /* styling the logo and the logo box inside the head */
 
-.header__logo-box{
+.header__logo-box {
   /* where we want to put our logo, we us absolute positioning
   how the 40px counted, it is counted from parent element which is header
   we also need to change the position of the header to relative. */
   position: absolute;
-  top:40px;
-  left:40px;
-
+  top: 4rem;
+  left: 4rem;
 }
-.header__logo{
-height:80px;
+.header__logo {
+  height: 8rem;
 }
 
 /* formating the text and the sologon  in the header 
 and also we want to put it in the center.  */
-.header__text-box{
+.header__text-box {
   /* centering the texts and button in the middle */
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   /* tranform is used to adjust the box exactly in the center of the page
   -50% for x and -50% for y to fix it in the center */
   transform: translate(-50%, -50%);
   /* algining everyting in the center */
-  text-align:center;
+  text-align: center;
 }
 
-.heading-primary{
+.heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* this function removes the shaking of the text */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
-.heading-primary--main{
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   /* calling the function moveInleft here */
   animation-name: moveInLeft;
   animation-duration: 5s;
@@ -98,27 +104,27 @@ and also we want to put it in the center.  */
   /* animation-timing-function: ease-out; */
   text-align: center;
 }
-.heading-primary--sub{
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 400;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   /* animation can be used to combine 3 functionality in the same time */
   animation: moveInRight 5s ease-out;
   text-align: center;
 }
 
 /* animation in CSS  we use @keyframes which is similar to function iin other languages.  */
-@keyframes moveInLeft{
+@keyframes moveInLeft {
   /* 0% is the start of an action (animation) the inital state */
   0% {
     opacity: 0;
-    transform:translateX(-100px);
+    transform: translateX(-10rem);
   }
   /* we can add other percentage aswell in the middle like 50% or 80% */
- 80%{
-   transform: translateX(20px);
- }
+  80% {
+    transform: translateX(2rem);
+  }
   /* 100% is the finish of an action(animation) the final state */
   100% {
     opacity: 1;
@@ -126,15 +132,15 @@ and also we want to put it in the center.  */
   }
 }
 
-@keyframes moveInRight{
-  0%{
+@keyframes moveInRight {
+  0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
-  80%{
-    transform: translateX(-20px);
+  80% {
+    transform: translateX(-2rem);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
   }
@@ -147,66 +153,67 @@ the same  */
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding:15px 40px;
+  padding: 1.5rem 4rem;
   /* need to display inline block becuase it is inline with its parent element
   this should be given when we give padding to an element */
   display: inline-block;
   /* positing in the middle of the box which is done in the text-box class */
-  border-radius: 100px;
-  transition: all .2s; 
+  border-radius: 10rem;
+  transition: all .2s;
   position: relative;
+  font-size: 1.6rem;
 }
 /* a button has many states like hover, active and visited */
-.btn:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px  rgba(0,0,0,.2);
+.btn:hover {
+  transform: translateY(-.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
-.btn:active{
-  transform:translateY(-1px);
-  box-shadow: 0 5px 10px  rgba(0,0,0,.2);
+.btn:active {
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
-.btn--white{
+.btn--white {
   background-color: #fff;
-  color:#777;
+  color: #777;
 }
 
 /* extra animation when we hover the button */
-.btn::after{
-  content:"";
+.btn::after {
+  content: "";
   display: inline-block;
-  height:100%;
-  width:100%;
-  border-radius: 100px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
   /* putting the shadow behind the button  by using absolut positionging */
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   /* z index defines the postion of an element if minus means it behind */
   z-index: -1;
   transition: all .4s;
 }
 
-.btn--white::after{
-  background-color:#fff;
+.btn--white::after {
+  background-color: #fff;
 }
-.btn:hover::after{
+.btn:hover::after {
   /* scale is used to make the size of element bigger */
   transform: scaleX(1.4) scaleY(1.6);
   /* to fade out */
   opacity: 0;
 }
-.btn--animated{
+.btn--animated {
   animation: moveInButton .3s ease-out .75s;
   /* animation fill mode function will everying to the button after the animation starts */
   animation-fill-mode: backwards;
 }
 /* making the button move in */
-@keyframes moveInButton{
-  0%{
+@keyframes moveInButton {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
   }
