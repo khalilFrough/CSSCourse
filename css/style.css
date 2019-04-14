@@ -1,28 +1,6 @@
 /*
 this project focuses mainly on CSS and 
 its advanced featureas, moroever it focuses on scss  */
-*,
-*::after,
-*::before {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: inherit;
-  /* changes the box modle so that the borders and the paddings 
-  are no longer adding to total width and total height of
-  the box which is specified without box-sizing any padding and border
-  will be added to the height and width of the box  */ }
-
-html {
-  /* making the root size for the whole webpage, we are making the font size of the document to 
-  100% =16 px and then we divide the 10/16=.625% */
-  font-size: 62.5%; }
-
-/* by putting the font-family in the boday element the child
- of the body will inheart the font automatically */
-body {
-  box-sizing: border-box;
-  /* 30px padding give 30px frame around the webpage */ }
-
 /* animation in CSS  we use @keyframes which is similar to function iin other languages.  */
 @keyframes moveInLeft {
   /* 0% is the start of an action (animation) the inital state */
@@ -58,6 +36,28 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+  /* changes the box modle so that the borders and the paddings 
+  are no longer adding to total width and total height of
+  the box which is specified without box-sizing any padding and border
+  will be added to the height and width of the box  */ }
+
+html {
+  /* making the root size for the whole webpage, we are making the font size of the document to 
+  100% =16 px and then we divide the 10/16=.625% */
+  font-size: 62.5%; }
+
+/* by putting the font-family in the boday element the child
+ of the body will inheart the font automatically */
+body {
+  box-sizing: border-box;
+  /* 30px padding give 30px frame around the webpage */ }
 
 body {
   font-family: "Lato", sans-serif;
@@ -95,6 +95,26 @@ body {
     /* animation can be used to combine 3 functionality in the same time */
     animation: moveInRight 5s ease-out;
     text-align: center; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #6daffa, #1e2b9c);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
 
 .btn {
   /* a button has many states like hover, active and visited */
@@ -145,6 +165,19 @@ body {
     /* animation fill mode function will everying to the button after the animation starts */
     animation-fill-mode: backwards; }
 
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row .col-1-of-2 {
+    width: calc((100%-6rem) / 2);
+    background-color: orange;
+    float: left; }
+    .row .col-1-of-2:not(:last-child) {
+      margin-right: 6rem; }
+
 .header {
   height: 95vh;
   /* this means that in each browser it will be dispalied 95% of the view port 
@@ -179,3 +212,8 @@ body {
     transform: translate(-50%, -50%);
     /* algining everyting in the center */
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
