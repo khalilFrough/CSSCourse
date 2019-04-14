@@ -1,0 +1,47 @@
+/* animation in CSS  we use @keyframes which is similar to function iin other languages.  */
+@keyframes moveInLeft {
+  /* 0% is the start of an action (animation) the inital state */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  /* we can add other percentage aswell in the middle like 50% or 80% */
+  80% {
+    transform: translateX(2rem);
+  }
+  /* 100% is the finish of an action(animation) the final state */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* formating the button inside the header element, link is a state of a spsudo class
+  here that i put link and visited state together becuase i want both states to be seen
+  the same  */
+
+/* making the button move in */
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

@@ -1,0 +1,24 @@
+// setting the global settings for the whole webpage.
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+  /* changes the box modle so that the borders and the paddings 
+  are no longer adding to total width and total height of
+  the box which is specified without box-sizing any padding and border
+  will be added to the height and width of the box  */
+}
+html {
+  /* making the root size for the whole webpage, we are making the font size of the document to 
+  100% =16 px and then we divide the 10/16=.625% */
+  font-size: 62.5%;
+}
+
+/* by putting the font-family in the boday element the child
+ of the body will inheart the font automatically */
+body {
+  box-sizing: border-box;
+  /* 30px padding give 30px frame around the webpage */
+}

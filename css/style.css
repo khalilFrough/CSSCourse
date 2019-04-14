@@ -1,8 +1,6 @@
 /*
 this project focuses mainly on CSS and 
-its advanced featureas
-
-/* universial selector to defult the margin and padding  */
+its advanced featureas, moroever it focuses on scss  */
 *,
 *::after,
 *::before {
@@ -22,82 +20,8 @@ html {
 /* by putting the font-family in the boday element the child
  of the body will inheart the font automatically */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box;
   /* 30px padding give 30px frame around the webpage */ }
-
-/* formating the header element */
-.header {
-  height: 95vh;
-  /* this means that in each browser it will be dispalied 95% of the view port 
-  it also has a liner-gradient property which puts to colors on top*/
-  background-image: linear-gradient(to right bottom, rgba(109, 175, 250, 0.8), rgba(30, 43, 156, 0.8)), url(/media/nature.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  /* using clip-path to cut the bottom of the image 
-  this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
-  where to start and where to finish start from the top left and goes to right*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-/* styling the logo and the logo box inside the head */
-.header__logo-box {
-  /* where we want to put our logo, we us absolute positioning
-  how the 40px counted, it is counted from parent element which is header
-  we also need to change the position of the header to relative. */
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 8rem; }
-
-/* formating the text and the sologon  in the header 
-and also we want to put it in the center.  */
-.header__text-box {
-  /* centering the texts and button in the middle */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* tranform is used to adjust the box exactly in the center of the page
-  -50% for x and -50% for y to fix it in the center */
-  transform: translate(-50%, -50%);
-  /* algining everyting in the center */
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* this function removes the shaking of the text */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* calling the function moveInleft here */
-  animation-name: moveInLeft;
-  animation-duration: 5s;
-  /* animation-delay: 3s; */
-  /* animation-iteration-count: 3; */
-  /* animation-timing-function: ease-out; */
-  text-align: center; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.75rem;
-  /* animation can be used to combine 3 functionality in the same time */
-  animation: moveInRight 5s ease-out;
-  text-align: center; }
 
 /* animation in CSS  we use @keyframes which is similar to function iin other languages.  */
 @keyframes moveInLeft {
@@ -124,64 +48,8 @@ and also we want to put it in the center.  */
     transform: translate(0); } }
 
 /* formating the button inside the header element, link is a state of a spsudo class
-here that i put link and visited state together becuase i want both states to be seen
-the same  */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* need to display inline block becuase it is inline with its parent element
-  this should be given when we give padding to an element */
-  display: inline-block;
-  /* positing in the middle of the box which is done in the text-box class */
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem; }
-
-/* a button has many states like hover, active and visited */
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* extra animation when we hover the button */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  /* putting the shadow behind the button  by using absolut positionging */
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* z index defines the postion of an element if minus means it behind */
-  z-index: -1;
-  transition: all 0.4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  /* scale is used to make the size of element bigger */
-  transform: scaleX(1.4) scaleY(1.6);
-  /* to fade out */
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInButton 0.3s ease-out 0.75s;
-  /* animation fill mode function will everying to the button after the animation starts */
-  animation-fill-mode: backwards; }
-
+  here that i put link and visited state together becuase i want both states to be seen
+  the same  */
 /* making the button move in */
 @keyframes moveInButton {
   0% {
@@ -190,3 +58,124 @@ the same  */
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /* 30px padding give 30px frame around the webpage */ }
+
+/* formating the header element */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* this function removes the shaking of the text */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* calling the function moveInleft here */
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */
+    /* animation-timing-function: ease-out; */
+    text-align: center; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    /* animation can be used to combine 3 functionality in the same time */
+    animation: moveInRight 5s ease-out;
+    text-align: center; }
+
+.btn {
+  /* a button has many states like hover, active and visited */
+  /* extra animation when we hover the button */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* need to display inline block becuase it is inline with its parent element
+    this should be given when we give padding to an element */
+    display: inline-block;
+    /* positing in the middle of the box which is done in the text-box class */
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      /* scale is used to make the size of element bigger */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* to fade out */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* putting the shadow behind the button  by using absolut positionging */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* z index defines the postion of an element if minus means it behind */
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    animation: moveInButton 0.3s ease-out 0.75s;
+    /* animation fill mode function will everying to the button after the animation starts */
+    animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  /* this means that in each browser it will be dispalied 95% of the view port 
+    it also has a liner-gradient property which puts to colors on top*/
+  background-image: linear-gradient(to right bottom, rgba(109, 175, 250, 0.8), rgba(30, 43, 156, 0.8)), url(/media/nature.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  /* using clip-path to cut the bottom of the image 
+    this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
+    where to start and where to finish start from the top left and goes to right*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* styling the logo and the logo box inside the head */
+  /* formating the text and the sologon  in the header 
+      and also we want to put it in the center.  */ }
+  .header__logo-box {
+    /* where we want to put our logo, we us absolute positioning
+          how the 40px counted, it is counted from parent element which is header
+          we also need to change the position of the header to relative. */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 8rem; }
+  .header__text-box {
+    /* centering the texts and button in the middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* tranform is used to adjust the box exactly in the center of the page
+      -50% for x and -50% for y to fix it in the center */
+    transform: translate(-50%, -50%);
+    /* algining everyting in the center */
+    text-align: center; }

@@ -1,0 +1,47 @@
+.header {
+  height: 95vh;
+  /* this means that in each browser it will be dispalied 95% of the view port 
+    it also has a liner-gradient property which puts to colors on top*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(/media/nature.jpg);
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  /* using clip-path to cut the bottom of the image 
+    this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
+    where to start and where to finish start from the top left and goes to right*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  &__logo-box {
+    /* where we want to put our logo, we us absolute positioning
+          how the 40px counted, it is counted from parent element which is header
+          we also need to change the position of the header to relative. */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  /* styling the logo and the logo box inside the head */
+
+  &__logo {
+    height: 8rem;
+  }
+
+  /* formating the text and the sologon  in the header 
+      and also we want to put it in the center.  */
+  &__text-box {
+    /* centering the texts and button in the middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* tranform is used to adjust the box exactly in the center of the page
+      -50% for x and -50% for y to fix it in the center */
+    transform: translate(-50%, -50%);
+    /* algining everyting in the center */
+    text-align: center;
+  }
+}
