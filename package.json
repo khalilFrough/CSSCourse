@@ -1,0 +1,27 @@
+{
+  "name": "advancedcss",
+  "version": "1.0.0",
+  "description": "just practicing advanced css here",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalilFrough/CSSCourse.git"
+  },
+  "keywords": [
+    "advanced",
+    "css"
+  ],
+  "author": "Khalil Frough",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khalilFrough/CSSCourse/issues"
+  },
+  "homepage": "https://github.com/khalilFrough/CSSCourse#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
