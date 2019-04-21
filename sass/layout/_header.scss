@@ -16,6 +16,7 @@
   /* using clip-path to cut the bottom of the image 
     this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
     where to start and where to finish start from the top left and goes to right*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   &__logo-box {
     /* where we want to put our logo, we us absolute positioning

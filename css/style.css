@@ -258,6 +258,7 @@ body {
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
+    overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
       background-color: #fff; }
@@ -266,9 +267,44 @@ body {
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #9ce7fa, #031786); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #9ce7fa, #031786), url(/media/wedding.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(156, 231, 250, 0.85), rgba(3, 23, 134, 0.85)); }
+  .card__detials {
+    padding: 3rem; }
+    .card__detials ul {
+      list-style: none;
+      width: 80%; }
+      .card__detials ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__detials ul li:not(last-child) {
+          border-bottom: 1px solid #eee; }
 
 .row {
   max-width: 114rem;
@@ -307,6 +343,7 @@ body {
   /* using clip-path to cut the bottom of the image 
     this is modern CSS  using the polygon function to spacify the 4 cornors of the image 
     where to start and where to finish start from the top left and goes to right*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* styling the logo and the logo box inside the head */
   /* formating the text and the sologon  in the header 
