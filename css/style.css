@@ -248,9 +248,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 52rem; }
   .card__side {
-    height: 50rem;
+    height: 52rem;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
@@ -265,7 +265,7 @@ body {
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #9ce7fa, #031786); }
+        background-image: linear-gradient(to right bottom, #9ffa9c, #047c44); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -277,7 +277,7 @@ body {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #9ce7fa, #031786), url(/media/wedding.jpg); }
+      background-image: linear-gradient(to right bottom, #9ffa9c, #047c44), url(/media/wedding.jpg); }
   .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
@@ -293,17 +293,18 @@ body {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; }
     .card__heading-span--1 {
-      background-image: linear-gradient(to right bottom, rgba(156, 231, 250, 0.85), rgba(3, 23, 134, 0.85)); }
-  .card__detials {
+      background-image: linear-gradient(to right bottom, rgba(159, 250, 156, 0.85), rgba(4, 124, 68, 0.85)); }
+  .card__details {
     padding: 3rem; }
-    .card__detials ul {
+    .card__details ul {
       list-style: none;
-      width: 80%; }
-      .card__detials ul li {
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
         text-align: center;
         font-size: 1.5rem;
         padding: 1rem; }
-        .card__detials ul li:not(last-child) {
+        .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
 
 .row {
