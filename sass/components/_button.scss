@@ -36,6 +36,14 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
   /* extra animation when we hover the button */
   &::after {
     content: "";
