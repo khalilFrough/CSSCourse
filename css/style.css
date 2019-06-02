@@ -1,6 +1,20 @@
 /*
 this project focuses mainly on CSS and 
 its advanced featureas, moroever it focuses on scss  */
+/*
+Phone: 600px;
+tablet portrait = 600px -900px;
+tablet landscape = 900px-1200px;
+normal screen = 1200px -1800px;
+big-desktops = 1800px - 1800 px;
+
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px;
+*/
 /* animation in CSS  we use @keyframes which is similar to function iin other languages.  */
 @keyframes moveInLeft {
   /* 0% is the start of an action (animation) the inital state */
@@ -52,6 +66,18 @@ html {
   /* making the root size for the whole webpage, we are making the font size of the document to 
   100% =16 px and then we divide the 10/16=.625% */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
+  @media (min-width: 12.5em) {
+    html {
+      font-size: 75%; } }
 
 /* by putting the font-family in the boday element the child
  of the body will inheart the font automatically */

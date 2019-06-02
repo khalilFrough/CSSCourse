@@ -12,3 +12,49 @@
   transform: translate(-50%, -50%);
   border-radius: 3px;
 }
+
+//for the media query
+
+/*
+Phone: 600px;
+tablet portrait = 600px -900px;
+tablet landscape = 900px-1200px;
+normal screen = 1200px -1800px;
+big-desktops = 1800px - 1800 px;
+
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px;
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint ==phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tab-port {
+    @media (max-width: 56.25em) {
+      //900 px
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tab-land {
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint ==big-desktop {
+    @media (min-width: 12.5em) {
+      //1800px;
+      @content;
+    }
+  }
+}
